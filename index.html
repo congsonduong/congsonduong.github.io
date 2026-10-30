@@ -20,7 +20,8 @@
     (function () {
       var d = document.documentElement, m = null;
       try { m = localStorage.getItem("motion"); } catch (e) {}
-      if (m ? m === "off" : matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("calm");
+      // Motion is on by default; the Motion switch lets a visitor turn it off (remembered on their browser)
+      if (m === "off") d.classList.add("calm");
     })();
   </script>
   <script type="application/ld+json">
