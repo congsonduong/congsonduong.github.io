@@ -58,6 +58,7 @@
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#bring">What I bring</a>
+        <a href="#research">Research</a>
         <a href="#lab">Lab</a>
         <a href="#story">Story</a>
         <a href="#experience">CV</a>
@@ -102,6 +103,7 @@
         <div class="marks">
           <div class="mark"><b>Digiphar</b><span>Meta ads</span></div>
           <div class="mark"><b>Minh Thuan Mart</b><span>Retail marketing</span></div>
+          <div class="mark"><b>Itaewon</b><span>UK retail and Reels</span></div>
           <div class="mark"><b>One Strange Fellow</b><span>YouTube</span></div>
           <div class="mark"><b>ZENDA</b><span>Amazon listings</span></div>
           <div class="mark"><b>UEA</b><span>MSc, Distinction</span></div>
@@ -260,10 +262,94 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Performance tracking in Google Sheets and Excel</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>ROAS, cost per result and budget pacing</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Google Analytics 4 and Google Ads Search certified</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Python for regression on large data sets</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Regression analysis in Python (pandas, statsmodels)</li>
             </ul>
-            <div class="proof"><b>100 reports</b>FTSE 100 annual reports I coded by hand for my dissertation</div>
+            <div class="proof"><b>83 reports</b>FTSE 100 annual reports I read in full and scored by hand for my dissertation</div>
           </article>
+        </div>
+      </div>
+    </section>
+    <section class="section on-light" id="research" style="padding-top:0">
+      <div class="container">
+        <div class="head-row">
+          <div>
+            <span class="label">My MSc dissertation</span>
+            <h2>Does talking about AI make a company worth more?</h2>
+          </div>
+          <p>For my MSc at UEA I read the 2025 annual reports of 83 FTSE 100 companies and checked their AI claims against patent records and financial data. It scored 85%.</p>
+        </div>
+
+        <div class="research-grid">
+          <div class="r-copy">
+            <p class="r-lede">Since ChatGPT arrived, almost every big company talks about AI in its annual report. I wanted to know whether that talk tells investors anything real.</p>
+            <h3>How I did it</h3>
+            <ul>
+              <li>Built a scoring framework of 8 AI themes, with the rules fixed before I read a single report</li>
+              <li>Read every report in full, from 14,000 to 329,000 words, and counted AI terms against report length</li>
+              <li>Matched each company to its AI patents on Lens.org and its financials from LSEG</li>
+              <li>Tested the links with six regression models in Python</li>
+            </ul>
+            <h3>What I found</h3>
+            <ul>
+              <li>Companies that talked more about AI had a somewhat higher market value, but the result was weak and rested largely on one company</li>
+              <li>There was no reliable link with profit</li>
+              <li>Having AI patents didn't make the AI talk count for more</li>
+            </ul>
+            <p class="r-take"><b>What I took into marketing:</b> when nearly half the companies cover 7 or 8 of the 8 themes, covering them stops setting anyone apart. Ad claims work the same way. Being specific is what stands out.</p>
+          </div>
+
+          <figure class="talk-proof">
+            <figcaption class="tp-title">Talk versus proof, FY2025</figcaption>
+            <div class="tp-row" style="--c:var(--teal)">
+              <div class="tp-head"><b>40 of 83</b><span>covered at least 7 of my 8 AI themes</span></div>
+              <div class="dots" data-dots="40/83" role="img" aria-label="40 of 83 companies"></div>
+            </div>
+            <div class="tp-row" style="--c:var(--sand)">
+              <div class="tp-head"><b>21 of 83</b><span>had an AI patent family I could trace, 2020 to 2024</span></div>
+              <div class="dots" data-dots="21/83" role="img" aria-label="21 of 83 companies"></div>
+            </div>
+            <p class="tp-note">Each dot is one company. The two measures were only loosely linked (a correlation of <b>0.34</b>), so how much a company says about AI tells you little about what it has patented.</p>
+          </figure>
+        </div>
+
+        <div class="transfer">
+          <h3>What it trained me to do at work</h3>
+          <div class="tr-head" aria-hidden="true"><span>The skill</span><span>In the dissertation</span><span>In your team</span></div>
+          <div class="tr-row">
+            <h4>Set the rules first</h4>
+            <p><span class="m-k">In the dissertation</span>I wrote a coding manual for the 8 AI themes and fixed it before reading any reports, so my scores couldn't drift towards the answer I wanted.</p>
+            <p class="job"><span class="m-k">In your team</span>Naming conventions, KPIs and test plans agreed before a campaign goes live, so results can be compared fairly.</p>
+          </div>
+          <div class="tr-row">
+            <h4>Make messy data line up</h4>
+            <p><span class="m-k">In the dissertation</span>Three sources: annual reports, Lens.org patents and LSEG financial data. I matched subsidiaries to their parent companies and scaled keyword counts to report length.</p>
+            <p class="job"><span class="m-k">In your team</span>Meta, GA4 and sales figures joined into one report, with big and small campaigns compared on the same scale.</p>
+          </div>
+          <div class="tr-row">
+            <h4>Tell a real result from noise</h4>
+            <p><span class="m-k">In the dissertation</span>Six regression models in Python (pandas and statsmodels), controlling for company size, debt and sector, with error estimates suited to a small sample.</p>
+            <p class="job"><span class="m-k">In your team</span>Calling an A/B test only when the gap is real, and saying so when the sample is too small to call.</p>
+          </div>
+          <div class="tr-row">
+            <h4>Check the odd number</h4>
+            <p><span class="m-k">In the dissertation</span>One company's return on assets was over 100%. I assumed it was my spreadsheet error, checked the published accounts and found it was right: Rightmove's value is its brand and website, which accounts don't record.</p>
+            <p class="job"><span class="m-k">In your team</span>When a dashboard spikes, I find out why before the number reaches a client or a manager.</p>
+          </div>
+          <div class="tr-row">
+            <h4>Say what the data can't show</h4>
+            <p><span class="m-k">In the dissertation</span>My main hypothesis wasn't supported. I worked out the smallest effect 83 companies could detect, and reported that the study was too small to tell, not that there was no effect.</p>
+            <p class="job"><span class="m-k">In your team</span>Flat results reported plainly, with the reason and what to try next.</p>
+          </div>
+          <div class="tr-row">
+            <h4>Plan for the slow part</h4>
+            <p><span class="m-k">In the dissertation</span>Collecting the data took far longer than analysing it, and I cut my plan from three years of data to one. Next time I'd run five companies start to finish before setting the timetable.</p>
+            <p class="job"><span class="m-k">In your team</span>New projects tried on a small batch first, so the deadline is based on how long the work really takes.</p>
+          </div>
+        </div>
+
+        <div class="r-foot">
+          <p>The full dissertation, <i>AI Disclosure, Formalised Innovation Activity and Firm Performance</i>, is available on request.</p>
+          <a class="btn magnetic" href="#contact"><span class="btn-label">Ask for a copy</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -273,7 +359,7 @@
         <div class="lab-copy">
           <span class="label">The testing lab</span>
           <h2>Never launch one ad.</h2>
-          <p>At Digiphar the rule was £600 in revenue with ad spend under a third of it. I passed my probation with spend held below 32%. This is the loop that got me there. Press the button to play a round with made-up numbers.</p>
+          <p>At Digiphar every ad had to earn its budget: £600 in revenue with spend under a third of it, roughly a 3:1 return. I passed my probation with spend held below 32%. The panel shows how I decided which ads got more money: four ads are measured against 3:1, then sorted by the rules under the table. The numbers are made up; the 3:1 target was real.</p>
           <ol class="loop">
             <li><span><b>Research.</b> Check the Ad Library and what already wins in the category.</span></li>
             <li><span><b>Build variants.</b> Hooks, angles and formats, all ready before launch.</span></li>
@@ -295,8 +381,14 @@
             <div class="dash-row" data-v><span class="name">Static C, offer-led</span><div class="bar"><span></span></div><span class="pill">waiting</span></div>
             <div class="dash-row" data-v><span class="name">Video D, founder story</span><div class="bar"><span></span></div><span class="pill">waiting</span></div>
           </div>
+          <ul class="dash-rules" aria-label="How each ad is sorted">
+            <li style="--c:var(--d-teal)"><b>Scale</b><span>Best return this round: it gets more budget</span></li>
+            <li style="--c:var(--d-blue)"><b>Keep</b><span>3:1 or better: leave it running</span></li>
+            <li style="--c:var(--d-gold)"><b>Iterate</b><span>2:1 to 3:1: make a new version</span></li>
+            <li style="--c:var(--d-red)"><b>Cut</b><span>Under 2:1: stop it</span></li>
+          </ul>
           <div class="dash-foot">
-            <span class="legend"><span><i style="background:var(--d-teal)"></i>Scale</span><span><i style="background:var(--d-blue)"></i>Keep</span><span><i style="background:var(--d-gold)"></i>Iterate</span><span><i style="background:var(--d-red)"></i>Cut</span></span>
+            <p class="dash-result" aria-live="polite">Four ads, one budget. Run a round to see where the money goes.</p>
             <button class="btn run-btn magnetic" type="button"><span class="btn-label">Run the test</span><span class="arr"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
           </div>
         </div>
@@ -332,13 +424,13 @@
               <p>At Digiphar the ad spend was real money and the targets were strict. I wrote the commercials, directed the shoots, and learned to stop guessing and test everything.</p></div>
           </article>
           <article class="chapter">
-            <div class="pic"><img src="assets/img/me-london.jpg" alt="Son in London at night, Big Ben behind him" loading="lazy" style="object-position:center 38%"></div>
+            <div class="pic"><img src="assets/img/me-london.jpg" alt="Son in London at night, Big Ben behind him" loading="lazy" style="object-position:center 62%"></div>
             <div class="txt"><div class="when"><span>2025–2026</span><span>Norwich, UK</span></div>
               <h3>A new country, a harder degree</h3>
-              <p>I moved to the UK for an MSc at UEA, finished it with a Distinction, and worked part-time in a busy shop alongside it.</p></div>
+              <p>I moved to the UK for an MSc at UEA and finished it with a Distinction. Alongside it I worked part-time at a Korean supermarket in Norwich, and appeared in the shop's Instagram Reels: my first content for a UK audience.</p></div>
           </article>
           <article class="chapter last">
-            <div class="pic"><img src="assets/img/me-manchester.jpg" alt="Son at Manchester Cathedral" loading="lazy"></div>
+            <div class="pic"><img src="assets/img/me-manchester.jpg" alt="Son at Manchester Cathedral" loading="lazy" style="object-position:center 60%"></div>
             <div class="txt"><div class="when"><span>Now</span><span>Manchester, UK</span></div>
               <h3>The next chapter needs a marketing team</h3>
               <p>I'm open to any marketing role, and happiest where I can plan campaigns and make the content for them. I can start straight away.</p>
@@ -402,6 +494,13 @@
             </ul></div></div>
           </div>
           <div class="xp-item">
+            <button class="xp-head" aria-expanded="false"><span class="d">Oct 2025–Sep 2026</span><h3>Shop Assistant</h3><span class="co">Itaewon Korean Supermarket, Norwich, UK</span><span class="plus" aria-hidden="true"></span></button>
+            <div class="xp-body"><div><ul>
+              <li>Appeared on camera in the shop's Instagram Reels, from comedy skits to talking-to-camera videos filmed in store</li>
+              <li>Customer service and sales, stock intake, supplier orders and in-store promotions, part-time alongside the MSc</li>
+            </ul></div></div>
+          </div>
+          <div class="xp-item">
             <button class="xp-head" aria-expanded="false"><span class="d">2023</span><h3>Creator and Producer</h3><span class="co">One Strange Fellow, YouTube</span><span class="plus" aria-hidden="true"></span></button>
             <div class="xp-body"><div><ul>
               <li>Researched, scripted, voiced and edited around 20 long-form videos, reaching 2,000+ views from a standing start</li>
@@ -424,19 +523,13 @@
               <li>Turned design-trend research into new product ideas, mock-ups and Seller Central listings</li>
             </ul></div></div>
           </div>
-          <div class="xp-item">
-            <button class="xp-head" aria-expanded="false"><span class="d">2025–2026</span><h3>Shop Assistant</h3><span class="co">Itaewon Shop, Norwich, UK</span><span class="plus" aria-hidden="true"></span></button>
-            <div class="xp-body"><div><ul>
-              <li>Customer service and sales, stock intake, supplier orders and in-store promotions, part-time alongside the MSc</li>
-            </ul></div></div>
-          </div>
         </div>
         <div class="creds">
           <div class="cred wide">
             <div>
               <span class="k">MSc, Distinction, 2025–2026</span>
               <h3>Digital Business and Management, University of East Anglia</h3>
-              <p style="margin:0">Dissertation (85%) on AI disclosure in the FTSE 100: my own coding framework, matched against Lens.org patent records and LSEG financial data, and analysed with regression in Python.</p>
+              <p style="margin:0">Dissertation (85%) on AI disclosure in the FTSE 100: my own coding framework, matched against Lens.org patent records and LSEG financial data, and analysed with regression in Python. <a href="#research" style="color:var(--royal);font-weight:700">How I did it</a></p>
             </div>
             <img src="assets/work/cover-dissertation.jpg" alt="Dissertation cover: AI disclosure and firm performance in the FTSE 100" loading="lazy">
           </div>
@@ -453,7 +546,7 @@
       <span class="label">Contact</span>
       <h2 class="foot-cta">Hiring in marketing? I'd like to hear about it.</h2>
       <div class="foot-grid">
-        <div><h4>On this page</h4><ul><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#bring">What I bring</a></li><li><a href="#lab">Lab</a></li><li><a href="#story">Story</a></li></ul></div>
+        <div><h4>On this page</h4><ul><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#bring">What I bring</a></li><li><a href="#research">Dissertation</a></li><li><a href="#lab">Lab</a></li><li><a href="#story">Story</a></li></ul></div>
         <div><h4>Case studies</h4><ul><li><a href="work/digiphar.html">Digiphar</a></li><li><a href="work/minh-thuan-mart.html">Minh Thuan Mart</a></li><li><a href="work/one-strange-fellow.html">One Strange Fellow</a></li><li><a href="work/zenda.html">ZENDA</a></li></ul></div>
         <div><h4>Elsewhere</h4><ul><li><a href="https://www.linkedin.com/in/cong-son-duong" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="assets/Cong-Son-Duong-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a></li><li><a href="https://www.youtube.com/@OneStrangeFellow" target="_blank" rel="noopener">YouTube</a></li></ul></div>
         <div>

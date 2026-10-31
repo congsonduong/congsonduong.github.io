@@ -285,6 +285,25 @@
   }, { threshold: 0.6 });
   $$("[data-count]").forEach((el) => counter.observe(el));
 
+  /* ---------- Dissertation: one dot per company, filled in when the panel scrolls into view ---------- */
+
+  const dotRows = $$("[data-dots]");
+  dotRows.forEach((row) => {
+    const [on, total] = row.dataset.dots.split("/").map(Number);
+    row.innerHTML = Array.from({ length: total }, (_, i) => (i < on && reduceMotion ? '<i class="on"></i>' : "<i></i>")).join("");
+  });
+  if (dotRows.length && !reduceMotion) {
+    const filler = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        filler.unobserve(en.target);
+        const on = Number(en.target.dataset.dots.split("/")[0]);
+        $$("i", en.target).slice(0, on).forEach((d, i) => setTimeout(() => d.classList.add("on"), i * 18));
+      });
+    }, { threshold: 0.5 });
+    dotRows.forEach((row) => filler.observe(row));
+  }
+
   /* ---------- Story: vertical scroll drives the horizontal track ---------- */
 
   const story = $(".story");
@@ -364,6 +383,7 @@
     const steps = $$(".loop li");
     const best = $(".best", dash);
     const round = $(".round", dash);
+    const result = $(".dash-result", dash);
     let rounds = 0;
     const wait = (ms) => new Promise((r) => setTimeout(r, reduceMotion ? 0 : ms));
     const run = async () => {
@@ -371,6 +391,7 @@
       round.textContent = ++rounds;
       rows.forEach((r) => { r.classList.remove("winner", "lost"); $(".bar span", r).style.setProperty("--w", "0%"); const pl = $(".pill", r); pl.className = "pill"; pl.textContent = "…"; });
       best.textContent = "–";
+      result.textContent = "Measuring each ad against 3:1…";
       for (const s of steps.slice(0, 2)) { steps.forEach((x) => x.classList.toggle("on", x === s)); await wait(500); }
       steps.forEach((x) => x.classList.toggle("on", x === steps[2]));
       // Each round the learnings feed back in, so the ceiling creeps up a little
@@ -387,6 +408,10 @@
         else { pl.textContent = "Iterate"; pl.classList.add("iter"); }
       });
       best.textContent = `${top}:1`;
+      // Say in words where the budget goes, using the short ad names ("Hook B", not "Hook B, social proof")
+      const named = (label) => rows.filter((r) => $(".pill", r).textContent === label).map((r) => $(".name", r).textContent.split(",")[0]);
+      const [win] = named("Scale"), redo = named("Iterate"), cut = named("Cut");
+      result.textContent = [`More budget for ${win}.`, redo.length && `New version of ${redo.join(" and ")}.`, cut.length && `${cut.join(" and ")} stopped.`].filter(Boolean).join(" ");
       $(".btn-label", runBtn).textContent = "Run next round";
       runBtn.disabled = false;
     };
@@ -484,6 +509,7 @@
       { label: "One Strange Fellow", hint: "case study", go: () => goTo(`${root}work/one-strange-fellow.html`) },
       { label: "ZENDA", hint: "case study", go: () => goTo(`${root}work/zenda.html`) },
       { label: "What I bring to a team", hint: "section", go: () => goTo(`${root}index.html#bring`) },
+      { label: "My dissertation", hint: "section", go: () => goTo(`${root}index.html#research`) },
       { label: "Run the testing lab", hint: "section", go: () => goTo(`${root}index.html#lab`) },
       { label: "Haiphong to Manchester", hint: "section", go: () => goTo(`${root}index.html#story`) },
       { label: "Download CV", hint: "PDF", go: () => window.open(`${root}assets/Cong-Son-Duong-CV.pdf`, "_blank") },
